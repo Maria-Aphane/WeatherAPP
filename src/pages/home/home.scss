@@ -1,3 +1,84 @@
 page-home {
 
+    .content{
+
+        background-image: url("../assets/imgs/b01.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+    }
+
+    .div1{
+
+
+        background: transparent;
+        margin-top: 20%;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding:20px;
+        background-size: 100% 100%;
+        border-radius: 30px;
+     
+     
+     }
+
+     .item2{
+
+        margin-bottom: 10px;
+        background-color: rgba(0.0,0.0,0.0,0.4);
+        border-radius: 30px;
+        text-align: center;
+        color: whitesmoke;
+      
+     }
+     .item1{
+
+        
+        
+        margin-bottom: 10px;
+        background: rgba(255, 255, 255, 0.4);
+        border: medium none;
+        color: whitesmoke;
+        border-radius: 30px;
+     
+       
+
+
+     }
+     .pic{
+        height: 60px;
+        width: 60px;
+        border-radius: 100%;
+        text-align: center;
+        vertical-align: middle;
+     
+        
+     }
+
+     .icon{
+        height: 30px;
+        width:30px;
+        border-radius: 100%;
+     
+     }
+     h2,h1,h3{
+
+        text-align: center;
+        color: whitesmoke;
+       
+
+
+     }
+     #button{
+
+        border-radius: 30px;
+        text-align: center;
+        background: #ff4500;
+        
+     }
+    
+
+
+   
+  
 }

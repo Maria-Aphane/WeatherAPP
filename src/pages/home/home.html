@@ -1,14 +1,47 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-navbar color="app" text-align="center">
+      <ion-title>
+       Weather App 
+      </ion-title>
+      <!-- <p style="text-align:left;"><img class="icon"  style="float:left;" src="../assets/imgs/icon5.png"/></p> -->
+    </ion-navbar>
+
+  </ion-header>
+  <ion-content class="content" padding>
+    <ion-item no-lines class="item1">
+        <ion-input type="text" placeholder='Search City' [(ngModel)]='city'></ion-input>
+      </ion-item>
+      <button ion-button round full id="button" (click)="getWeatherCity()"><ion-icon name='search'></ion-icon></button>
+    
+  <div *ngIf="weather"> 
+    
+  <ion-list no-lines>
+
+    <div class="div1">
+
+      <ion-item class="item2">
+      
+  <ion-item class="item2">
+      <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon><h2>{{date * 1000 | date}}</h2>
+  </ion-item>
+  <ion-item class="item2">
+      <ion-icon ios="ios-sunny" md="md-sunny"></ion-icon><h2 text-align:right>{{main}}</h2>
+  </ion-item>
+  <ion-item class="item2">
+      <ion-icon ios="ios-thermometer" md="md-thermometer"></ion-icon><h2 >{{temp|number:0}} &deg;C</h2>
+   </ion-item>
+    <ion-item class="item2">
+        <ion-icon ios="ios-book" md="md-book"></ion-icon><h2 >Description : {{description}}</h2>
+    </ion-item >
+      <ion-item class="item2">
+          <ion-icon name="snow" md="ios-water-outline"></ion-icon><h2>Wind  : {{wspeed}} km/h</h2>
+        </ion-item >
+        <ion-item class="item2">
+            <ion-icon name="water" md="ios-water-outline"></ion-icon><h2>Humidity : {{humidity}}% </h2>
+          </ion-item>
+        </ion-item>
+  </div>
+  </ion-list>
+</div>
 </ion-content>
