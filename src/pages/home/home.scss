@@ -11,7 +11,7 @@ page-home {
     .div1{
 
 
-        background: transparent;
+        background-color: rgba(0.0,0.0,0.0,0.4);
         margin-top: 20%;
         margin-left: 20px;
         margin-right: 20px;
@@ -25,20 +25,20 @@ page-home {
      .item2{
 
         margin-bottom: 10px;
-        background-color: rgba(0.0,0.0,0.0,0.4);
-        border-radius: 30px;
-        text-align: center;
+        background-color: transparent;
+        border-radius: 50px;
+        text-align:left;
         color: whitesmoke;
       
      }
-     .item1{
+     .list{
 
         
         
         margin-bottom: 10px;
         background: rgba(255, 255, 255, 0.4);
         border: medium none;
-        color: whitesmoke;
+        color:whitesmoke;
         border-radius: 30px;
      
        
@@ -76,9 +76,35 @@ page-home {
         background: #ff4500;
         
      }
-    
-
+   
 
    
+    .nav{
+
+        text-align: center;
+        color: whitesmoke;
+        
+    }
+    .select{
+
+        background: #ff4500;
+        color:whitesmoke;
+        border-radius: 50px;
+    }
+    .icon{
+
+        font-size:40px;
+     }
+     ion-option{
+         background: #ff4500;
+
+        
+     }
+
+     ion-select {
+
+        background: #ff4500;
+
+     }  
   
 }

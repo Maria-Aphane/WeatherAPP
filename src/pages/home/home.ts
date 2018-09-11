@@ -1,13 +1,15 @@
 import { Weather } from './../../services/weather.service';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
+import { FormGroup, FormControl, FormBuilder,Validators,FormArray } from '@angular/forms';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  
+  value:string;
   weather:any;
   city:string;
   main:string;
@@ -20,24 +22,37 @@ export class HomePage {
 
   
 
-  constructor(public navCtrl: NavController,private service:Weather) {
-
-    
+  constructor(public navCtrl: NavController,private service:Weather,private FB:FormBuilder,public alertCtrl:AlertController ) {
 
   }
-  getWeatherCity(){
+  getWeather(value:any){
+    this.service.getWeather(this.city).subscribe(results=>{
+    this.weather= results;
 
-    this.service.getWeather(this.city).subscribe(res =>{
 
-      this.weather=res;
-      this.main=this.weather.weather[0].main;
-      this.description=this.weather.weather[0].description;
-      this.date=this.weather.dt;
-      this.humidity=this.weather.main.humidity;
-      this.wspeed=this.weather.wind.speed;
-      this.temp=(this.weather.main.temp-273.15);
-      console.log('maria', res);
-    });
-  }
+    this.main=this.weather.weather[0].main;
+    this.description= this.weather.weather[0].description;
+
+    this.temp= this.weather.main.temp-273.15;
+    this.humidity= this.weather.main.humidity;
+
+    this.wspeed= this.weather.wind.seed;
+
+    this.date= this.weather.dt;
+
+    console.log("response:",results);
+
+  });
 
 }
+
+daysOptions = {
+  cssClass: 'my-class',
+ 
+}
+
+
+
+}
+
+

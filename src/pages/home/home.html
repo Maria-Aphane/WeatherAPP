@@ -1,47 +1,59 @@
 <ion-header>
-
-    <ion-navbar color="app" text-align="center">
+    <ion-navbar color="app" class="nav">
       <ion-title>
        Weather App 
       </ion-title>
-      <!-- <p style="text-align:left;"><img class="icon"  style="float:left;" src="../assets/imgs/icon5.png"/></p> -->
     </ion-navbar>
-
   </ion-header>
   <ion-content class="content" padding>
-    <ion-item no-lines class="item1">
-        <ion-input type="text" placeholder='Search City' [(ngModel)]='city'></ion-input>
-      </ion-item>
-      <button ion-button round full id="button" (click)="getWeatherCity()"><ion-icon name='search'></ion-icon></button>
-    
-  <div *ngIf="weather"> 
-    
-  <ion-list no-lines>
 
-    <div class="div1">
-
-      <ion-item class="item2">
       
-  <ion-item class="item2">
-      <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon><h2>{{date * 1000 | date}}</h2>
-  </ion-item>
-  <ion-item class="item2">
-      <ion-icon ios="ios-sunny" md="md-sunny"></ion-icon><h2 text-align:right>{{main}}</h2>
-  </ion-item>
-  <ion-item class="item2">
-      <ion-icon ios="ios-thermometer" md="md-thermometer"></ion-icon><h2 >{{temp|number:0}} &deg;C</h2>
-   </ion-item>
-    <ion-item class="item2">
-        <ion-icon ios="ios-book" md="md-book"></ion-icon><h2 >Description : {{description}}</h2>
-    </ion-item >
-      <ion-item class="item2">
-          <ion-icon name="snow" md="ios-water-outline"></ion-icon><h2>Wind  : {{wspeed}} km/h</h2>
-        </ion-item >
-        <ion-item class="item2">
-            <ion-icon name="water" md="ios-water-outline"></ion-icon><h2>Humidity : {{humidity}}% </h2>
-          </ion-item>
-        </ion-item>
-  </div>
-  </ion-list>
-</div>
+
+            <ion-list class="list" >
+                <ion-item class="list">
+                  <ion-label color="light">Cities</ion-label>
+                  <ion-select [(ngModel)]='city'(ionChange)="getWeather($event)" class="select" >
+                    <ion-option value="Johannesburg"  >Johannesburg</ion-option>
+                    <ion-option value="Bloemfontein">Bloemfontein</ion-option>
+                    <ion-option value="Nelspruit">Nelspruit</ion-option>
+                    <ion-option value="Polokwane">Polokwane</ion-option>
+                    <ion-option value="Rustenburg">Rustenburg</ion-option>
+                    <ion-option value="Soweto">Soweto</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list> 
+
+<div *ngIf="weather" class="div1">
+              <ion-item class="item2" no-lines >
+                  <strong>Main Weather:</strong> {{main}}
+                  <ion-icon name="sunny" item-left></ion-icon>
+                </ion-item>
+              
+                <ion-item  class="item2" no-lines>
+                  <strong>Description:</strong> {{description}}
+                  <ion-icon name="desktop" item-left></ion-icon>
+                </ion-item>
+              
+                <ion-item class="item2" no-lines>
+                  <strong>Temperature:</strong> {{temp | number:0}}&deg;C
+                  <ion-icon name="thermometer" item-left></ion-icon>
+                </ion-item>
+              
+                <ion-item class="item2" no-lines>
+                <ion-icon name="aperture" item-left></ion-icon>
+                  <strong>Humidity:</strong> {{humidity}}%
+                </ion-item>
+              
+                <ion-item  class="item2" no-lines>
+                 <ion-icon name="color-wand" item-left></ion-icon>
+                <strong>Wind Speed:</strong> {{wspeed}} km/h
+                </ion-item>
+              
+                <ion-item  class="item2" no-lines>
+                <ion-icon name="calendar" item-left></ion-icon>
+                <strong>Date:</strong> {{date * 1000 | date}}
+                </ion-item>
+
+
+              </div>
 </ion-content>
